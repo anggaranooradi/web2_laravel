@@ -21,7 +21,7 @@ class MakulController extends Controller
     public function store(Request $request)
     {
         Makul::create($request->all());
-        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
+        alert()->success('Success','Berhasil Menambahkan Data');
         return redirect()->route('makul');
     }
 
