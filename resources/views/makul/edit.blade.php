@@ -19,12 +19,12 @@
                                 <div class="col">
                                     <label for="">Nama Matakuliah</label>
                                     <input type="text" name="nama_makul" class="form-control" placeholder="Tambahkan Nama Mata Kuliah" value="{{ is_null
-                                    ($makul) ? '' : $makul->nama_makul }}">>
+                                    ($makul) ? '' : $makul->nama_makul }}">
                                 </div>
                                 <div class="col">
                                     <label for="">SKS</label>
                                     <input type="number" name="sks" class="form-control" placeholder="Tambahkan SKS" value="{{ is_null
-                                    ($makul) ? '' : $makul->sks }}">>
+                                    ($makul) ? '' : $makul->sks }}">
                                 </div>
                             </div>
                         </div>

@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                Data Makul
-                <a href="{{ route('tambah.makul') }}" class="btn btn-md btn-primary float-right">Tambah Data</a>
+                Data Nilai Mahasiswa
+                <a href="{{ route('tambah.nilai') }}" class="btn btn-md btn-primary float-right">Tambah Data</a>
                 </div>
 
                 <div class="card-body">
@@ -15,23 +15,27 @@
                         <table class="table table-bordered">
                             <tr>
                                 <th>NO.</th>
-                                <th>KODE MATA KULIAH</th>
+                                <th>NPM</th>
+                                <th>NAMA MAHASISWA</th>
                                 <th>NAMA MATA KULIAH</th>
                                 <th>SKS</th>
+                                <th>NILAI</th>
                                 <th>AKSI</th>
                             </tr>
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach ($makul as $mk)
+                            @foreach ($nilai as $ni)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $mk->kd_makul }}</td>
-                                <td>{{ $mk->nama_makul }}</td>
-                                <td>{{ $mk->sks }}</td>
+                                <td>{{ $ni->mahasiswa->npm }}</td>                        
+                                <th>{{ $ni->mahasiswa->user->name }}</th>
+                                <td>{{ $ni->makul->nama_makul }}</td>
+                                <td>{{ $ni->makul->sks }}</td>
+                                <td>{{ $ni->nilai }}</td>
                                 <td>
-                                    <a href="{{ route('edit.makul', $mk->id) }}" class="btn btn-sm btn-warning">EDIT</a>
-                                    <a href="{{ route('hapus.makul', $mk->id) }}" class="btn btn-sm btn-danger">HAPUS</a>
+                                    <a href="{{ route('edit.nilai', $ni->id) }}" class="btn btn-sm btn-warning">EDIT</a>
+                                    <a href="{{ route('hapus.nilai', $ni->id) }}" class="btn btn-sm btn-danger">HAPUS</a>
                                 </td>
                             </tr>
                             @endforeach
